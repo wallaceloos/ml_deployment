@@ -17,7 +17,7 @@ if __name__ == "__main__":
                  outputs=gr.Label(num_top_classes=5)).launch(share=False)
 ```   
 <p align="center">
-<img src="https://github.com/wallaceloos/deployML/blob/main/imgs/gradio_ops.PNG" width="90%" height="90%">
+<img src="https://github.com/wallaceloos/ml_deployment/blob/main/imgs/gradio_ops.PNG" width="90%" height="90%">
 </p>  
 <p align="justify">The input is an image and the output are the top 5 classes. The predict_image function has like argument the image data, and after applying the preprocessing function on it, the model performs the prediction and returns the labels. 
   
@@ -42,7 +42,7 @@ def predict_image(input_image):
     return confidences
 ```  
 <p align="center">
-<img src="https://github.com/wallaceloos/deployML/blob/main/imgs/gradio_ops_result.PNG" width="90%" height="90%">
+<img src="https://github.com/wallaceloos/ml_deployment/blob/main/imgs/gradio_ops_result.PNG" width="90%" height="90%">
 </p>
 
 <p align="justify"><a href=https://streamlit.io/>Streamlit</a> gives you a little bit more flexibility than Gradio, but with great power comes great responsibility (and more lines of codes). You have more autonomy about how to organize your UI components. Similar to Gradio, Streamlit can be installed using pip install streamlit. I am going to create a similar interface that I created using Gradio. Streamlit already has a function to upload files, that we can simply use by calling the function st.file_uploader.  
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         file_obj = st.file_uploader('Choose an image:', type=['jpg', 'png', 'jpeg'])
 ```  
 <p align="center">
-<img src="https://github.com/wallaceloos/deployML/blob/main/imgs/streamlit_ops.PNG" width="90%" height="90%">
+<img src="https://github.com/wallaceloos/ml_deployment/blob/main/imgs/streamlit_ops.PNG" width="90%" height="90%">
 </p>
 <p align="justify">Next step I define the layout of the page with two columns, where the first column will depict the image and the second column will show the predictions. When the image is uploaded, it is preprocessed and the model is called in order to make the predictions. The predict function is the same function that was used in the Gradio example.
 
@@ -77,7 +77,7 @@ if __name__ == "__main__":
 ```  
 
 <p align="center">
-<img src="https://github.com/wallaceloos/deployML/blob/main/imgs/streamlit_ops_result.PNG" width="90%" height="90%">
+<img src="https://github.com/wallaceloos/ml_deployment/blob/main/imgs/streamlit_ops_result.PNG" width="90%" height="90%">
 </p>    
 
 <p align="justify">You can host these apps on Hugging Face Space. If you don’t want to use a GPU, it’s free, but if you want to use one, you can select the many options that Hugging Face provides. For production purposes, you might prefer a different way for deployment.   
